@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usercrud
+  labels:
+    app: usercrud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usercrud
+  template:
+    metadata:
+      labels:
+        app: usercrud
+    spec:
+      containers:
+        - name: usercrud
+          image: didilmfs/usercrud:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 2022

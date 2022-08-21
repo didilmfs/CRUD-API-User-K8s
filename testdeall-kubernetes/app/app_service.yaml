@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usercrud
+  labels:
+    app: usercrud
+spec:
+  type: LoadBalancer
+  selector:
+    app: usercrud
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 2022
